@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<DMC_CreateJs>
+			<version>0.1.0.0</version>
+		</DMC_CreateJs>
+	</modules>
+</config>
