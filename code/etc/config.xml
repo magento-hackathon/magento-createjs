@@ -5,4 +5,36 @@
 			<version>0.1.0.0</version>
 		</DMC_CreateJs>
 	</modules>
+	<frontend>
+		<layout>
+			<updates>
+				<createjs>
+					<file>dmc/createjs.xml</file>
+				</createjs>
+			</updates>
+		</layout>
+		<events>
+			<core_block_abstract_prepare_layout_after>
+				<observers>
+					<dmc_createjs_is_admin>
+						<class>DMC_CreateJs_Model_Session</class>
+						<method>dispatchIsActive</method>
+						<type>singleton</type>
+					</dmc_createjs_is_admin>
+				</observers>
+			</core_block_abstract_prepare_layout_after>
+		</events>
+	</frontend>
+	<global>
+		<blocks>
+			<dmc_createjs>
+				<class>DMC_CreateJs_Block</class>
+			</dmc_createjs>
+		</blocks>
+		<models>
+			<dmc_createjs>
+				<class>DMC_CreateJs_Model</class>
+			</dmc_createjs>
+		</models>
+	</global>
 </config>

@@ -1,2 +1,7 @@
 code                                        app/code/local/DMC/CreateJs/
 app/etc/modules/DMC_CreateJs.xml            app/etc/modules/
+
+design/frontend/layout                      app/design/frontend/default/default/layout/
+skin/frontend/                              skin/frontend/default/default/dmc_createjs
+
+js                                          js/createjs
