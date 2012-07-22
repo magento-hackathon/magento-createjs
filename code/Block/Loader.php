@@ -26,6 +26,7 @@ class DMC_CreateJs_Block_Loader extends Mage_Core_Block_Abstract
 
             $html .= '<script type="text/javascript">
             var adminUrl = "'.Mage::getConfig()->getNode('admin/routers/adminhtml/args/frontName').'";
+            var shopUrl = "'.$this->getUrl().'";
 
             </script>';
             $jsPath = $this->getSkinUrl('dmc_createjs/' . 'config.js' );
