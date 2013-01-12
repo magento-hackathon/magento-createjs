@@ -10,36 +10,29 @@ class DMC_CreateJs_Block_Loader extends Mage_Core_Block_Abstract
 
     protected function _toHtml()
     {
-        $html = '';
 
         $js_arr = array();
+        $css_arr = array();
 
         foreach( $this->getFrontendJs() as $js ){
 
-
             $jsPath = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS) . 'createjs/' . $js;
             $js_arr[] = $jsPath;
-
-
-
         }
+
         foreach( $this->getFrontendCss() as $css ){
 
-            $cssPath = 'skin/frontend/default/default/dmc_createjs/' . $css;
-            $html .= "<link type='text/css' href='$cssPath' media='all' rel='stylesheet'/>";
-
+            $cssPath = '/skin/frontend/default/default/dmc_createjs/' . $css;
+            $css_arr[] = $cssPath;
         }
 
-        $html .= '<script type="text/javascript">
-        var adminUrl = "'.Mage::getConfig()->getNode('admin/routers/adminhtml/args/frontName').'";
-        var shopUrl = "'.$this->getUrl().'"
+        $adminUrl = Mage::getConfig()->getNode('admin/routers/adminhtml/args/frontName');
+        $shopUrl = $this->getUrl();
 
-        </script>';
-        $jsPath = 'skin/frontend/default/default/dmc_createjs/' . 'config.js';
-        $html  .= "<script type='text/javascript' src='$jsPath'></script>";
-
-        $data = array('html' => $html,
-              'js' => $js_arr);
+        $data = array('js' => $js_arr,
+                      'css' => $css_arr,
+                      'adminUrl' => $adminUrl,
+                      'shopUrl' => $shopUrl);
 
         return $data;
     }
@@ -56,6 +49,7 @@ class DMC_CreateJs_Block_Loader extends Mage_Core_Block_Abstract
             'annotate-min.js',
             'hallo.js',
             'create.js',
+            'config.js'
         );
     }
 

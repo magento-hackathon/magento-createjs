@@ -2,7 +2,7 @@ new Ajax.Request('/admin/createjs/getcreatejs', {
     method: 'get',
     onSuccess: function(response) {
 
-        
+
         var create_js_div = new Element('span', {'id' : 'createjs_libs'});
 
         var res = response.responseText.evalJSON();
@@ -14,18 +14,26 @@ new Ajax.Request('/admin/createjs/getcreatejs', {
                 var element = document.createElement('script');
                 element.type = 'text/javascript';
                 element.src = res.js[item];
-
-                document.getElementsByClassName('footer-container')[0].appendChild(element);
-                //alert('<script type="text/javascript" src="'+res.js[item]+'"></script>');
+                document.getElementsByTagName('head')[0].appendChild(element);
             }
         }
-        /**
-         *
-         *
-         $$('head')[0].insert(create_js_div);
 
-         $('createjs_libs').innerHTML = response.responseText;
-         *
-         */
+        //$html .= "<link type='text/css' href='$cssPath' media='all' rel='stylesheet'/>";
+
+        for(item in res.css) {
+            if (res.css.hasOwnProperty(item)) {
+                var element = document.createElement('link');
+                element.type = 'text/css';
+                element.href = res.css[item];
+                element.media = 'all';
+                element.ref = 'stylesheet';
+                document.getElementsByTagName('head')[0].appendChild(element);
+                console.log(res.css[item]);
+            }
+        }
+
+        window.adminUrl = res.adminUrl;
+        window.shopUrl = res.shopUrl;
+
     }
 })
