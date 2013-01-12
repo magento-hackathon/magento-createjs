@@ -6,17 +6,12 @@ class DMC_CreateJs_Adminhtml_CreatejsController extends Mage_Adminhtml_Controlle
     public function getcreatejsAction()
     {
 
-        //return '<script type="text/javascript">alert("LALALA")</script>';
 
-        $result = '<script type="text/javascript">alert("LALALA")</script>';
-
-        $this->getResponse()->setBody($result);
 
     }
 
     public function preDispatch()
     {
-
 
         parent::preDispatch();
 
@@ -31,6 +26,9 @@ class DMC_CreateJs_Adminhtml_CreatejsController extends Mage_Adminhtml_Controlle
             && $isAdmin
         ) {
             $result = '<script type="text/javascript">alert("LALALA")</script>';
+
+
+
 
             $headers = $this->getResponse()->getHeaders();
 
