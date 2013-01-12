@@ -13,13 +13,13 @@ class DMC_CreateJs_Block_Loader extends Mage_Core_Block_Abstract
 
             foreach( $this->getFrontendJs() as $js ){
 
-                $jsPath = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS) . 'createjs/' . $js;
+                $jsPath = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS) . 'dmc/createjs/' . $js;
                 $html .= "<script type='text/javascript' src='$jsPath'></script>";
 
             }
             foreach( $this->getFrontendCss() as $css ){
 
-                $cssPath = $this->getSkinUrl('dmc_createjs/' . $css );
+                $cssPath = $this->getSkinUrl('dmc/createjs/' . $css );
                 $html .= "<link type='text/css' href='$cssPath' media='all' rel='stylesheet'/>";
 
             }
@@ -30,7 +30,7 @@ class DMC_CreateJs_Block_Loader extends Mage_Core_Block_Abstract
             var ressourceUrl = "'.$this->getRessourceUrl().'";
 
             </script>';
-            $jsPath = $this->getSkinUrl('dmc_createjs/' . 'config.js' );
+            $jsPath = $this->getSkinUrl('dmc/createjs/' . 'config.js' );
             $html  .= "<script type='text/javascript' src='$jsPath'></script>";
         }
         return "<meta content='is used' name='createjs'/>".$html;
