@@ -43,11 +43,14 @@ class DMC_CreateJs_Block_Loader extends Mage_Core_Block_Abstract
             'underscore-min.js',
             'backbone-min.js',
             'vie-min.js',
+            'jquery.tagsinput.min.js',
             'jquery.rdfquery.min.js',
+            'rangy-core-1.2.3.js',
             'annotate-min.js',
             'hallo.js',
             'create.js',
         );
+
     }
 
     public function getFrontendCss(){

@@ -157,6 +157,10 @@ a.create-ui-toggle {
     border-color: #ffffff #ffffff #ffffff;
 }
 
+.create-ui-btn::-moz-focus-inner {
+    border: 0;
+}
+
 .create-ui-red-btn {
     background-color: #7a2626;
     background-image: -moz-linear-gradient(center top , #7a2626, #7a2626);
@@ -195,6 +199,7 @@ a.create-ui-toggle {
 .create-ui-btn-small {
     border: none;
     background-color: transparent;
+	border: 1px solid transparent;
     color: #ffffff;
     cursor: pointer;
     display: inline-block;
@@ -203,7 +208,6 @@ a.create-ui-toggle {
     margin-bottom: 0;
     padding: 4px 4px;
     text-align: center;
-    /*text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);*/
     vertical-align: middle;
     margin-left: 2px;
     margin-top: 0px;
@@ -232,12 +236,12 @@ body > .hallotoolbar {
 }
 
 .create-ui-btn-small:hover, .create-ui-toolbar-wrapper .create-ui-toolbar-dynamictoolarea .ui-state-active {
-    background-color: #ffffff;
-    border-radius: 6px;
-    background-position: 0 -30px;
-    color: #393939;
-    text-decoration: none;
-    border-color: #ffffff #ffffff #ffffff;
+	background-color: #313131;
+	background-position: 0 -30px;
+	border: 1px solid #989898;
+	border-radius: 4px 4px 4px 4px;
+	color: #BFBFBF;
+	text-decoration: none;
 }
 .create-ui-toolbar-wrapper .ui-state-disabled, .create-ui-toolbar-wrapper .ui-state-disabled:hover {
     color: #393939; 
@@ -384,6 +388,12 @@ body > .hallotoolbar {
     z-index: 1000;
 }
 
+.dropdown-menu h3 {
+  font-weight: lighter;
+  margin: 10px 0;
+  font-size: 0.9em;
+}
+
 .dropdown-menu .menu-item {
     margin: 0px;
     padding: 6px;
@@ -428,11 +438,11 @@ body > .hallotoolbar {
 }
 
 .create-ui-statustools .ui-state-disabled .create-ui-btn {
-	background-color: transparent;
-	background-image: none;
-	border-color: #626262;
-	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
-	color: #797979;
+	background-color: transparent;
+	background-image: none;
+	border-color: #626262;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+	color: #797979;
 }
 
 .dropdown-menu li {
@@ -489,6 +499,49 @@ body > .hallotoolbar {
 }
 /* DROPDOWN END */
 
+/* TAGS START */
+.midgardTags {
+  width: 100%;
+}
+
+.midgardTags a {
+  display: inline;
+  font-weight: bold;
+  padding: 0 5px;
+}
+
+.midgardTags .tagsinput {
+  line-height: 2em;
+  width: 100% !important;
+}
+
+.midgardTags .tag {
+  color: #ffffff;
+  background-color: #82827E;
+  /*background-color: rgba(0, 0, 0, .8);*/
+  border-radius: 6px;
+  padding: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
+  margin: 2px;
+  font-size: 0.8em;
+  display: inline-block;
+}
+
+.midgardTags .tag a {
+  color: #ffffff;
+}
+
+.midgardTags input {
+  width: 100%;
+  background-color: #393939;
+  color: #ffffff !important;
+  border: 1px solid #ffffff;
+  padding: 2px;
+  margin: 2px;
+}
+/* TAGS END */
+
 /* EDITOR */
 [contenteditable="true"]:focus {
   outline-style: auto;
@@ -502,6 +555,19 @@ div.halloEditIndicator {
   color: #000000;
   background-color: #67cc08;
   opacity: 0.8;
+}
+
+.halloblock button.blockselector, .halloblock button.blockselector:focus{
+  display:block;
+  width: 100%;
+  margin:0px;
+  padding: 0px;
+  background: transparent;
+  border: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  color: #ffffff;
 }
 /* EDITOR END */
 
@@ -603,7 +669,7 @@ div.halloEditIndicator {
 
 .halloimage-dialog,
 .hallolink-dialog,
-.create-ui-tags {
+{
   margin-top: 60px;
   background-color: #ffffff;
   color: #000000;
@@ -614,44 +680,6 @@ div.halloEditIndicator {
   position: relative;
   border: 2px solid #111111;
   border-color: rgba(0, 0, 0, .8);
-}
-
-.create-ui-tags {
-  width: 200px;
-}
-
-.create-ui-tags h3 {
-  margin: 0px;
-}
-
-.create-ui-tags .tagsinput {
-  line-height: 2em;
-  width: 100% !important;
-}
-
-.create-ui-tags .tag {
-  color: #ffffff;
-  background-color: #111111;
-  background-color: rgba(0, 0, 0, .8);
-  border-radius: 6px;
-  padding: 2px;
-  padding-left: 4px;
-  padding-right: 4px;
-  margin: 2px;
-  font-weight: bold;
-}
-
-.create-ui-tags .tag a {
-  color: #ffffff;
-}
-
-.create-ui-tags input {
-  width: 140px;
-  background-color: #474747;
-  color: #ffffff !important;
-  border: 1px solid #ffffff;
-  padding: 2px;
-  margin: 2px;
 }
 
 .halloimage-dialog .ui-dialog-title,
