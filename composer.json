@@ -1,0 +1,15 @@
+{
+    "name": "digitalmanufaktur/magento-createjs",
+    "type": "magento-module",
+    "license":"OSL-3.0",
+    "description":"integrate create.js functionality into magento",
+    "authors":[
+        {
+            "name":"Daniel Fahlke aka Flyingmana",
+            "email":"flyingmana@googlemail.com"
+        }
+    ],
+    "require": {
+        "magento-hackathon/magento-composer-installer": "dev-master"
+    }
+}
