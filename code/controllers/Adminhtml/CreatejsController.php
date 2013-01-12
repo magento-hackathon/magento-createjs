@@ -6,8 +6,6 @@ class DMC_CreateJs_Adminhtml_CreatejsController extends Mage_Adminhtml_Controlle
     public function getcreatejsAction()
     {
 
-
-
     }
 
     public function preDispatch()
@@ -15,8 +13,6 @@ class DMC_CreateJs_Adminhtml_CreatejsController extends Mage_Adminhtml_Controlle
 
         parent::preDispatch();
 
-        $adminSession = Mage::getSingleton('admin/session');
-        $user = $adminSession->getUser();
         $isAdmin = (Mage::getSingleton('admin/session')->isLoggedIn());
 
         if (($this->getRequest()->getQuery('isAjax', true) || $this->getRequest()->getQuery('ajax', true))
@@ -25,16 +21,13 @@ class DMC_CreateJs_Adminhtml_CreatejsController extends Mage_Adminhtml_Controlle
             && $this->getRequest()->getActionname() == 'getcreatejs'
             && $isAdmin
         ) {
-            $result = '<script type="text/javascript">alert("LALALA")</script>';
 
-
-
-
-            $headers = $this->getResponse()->getHeaders();
+            $result = Mage::app()->getLayout()->createBlock('dmc_createjs/loader')->getCreateJsHtml();
 
             $this->getResponse()->clearAllHeaders();
             $this->getResponse()->setHttpResponseCode(200);
-            $this->getResponse()->setBody($result);
+            $this->getResponse()->setBody(Mage::helper('core')->jsonEncode($result));
+            Mage::log($result);
 
         } else {
 #            parent::predispatch();

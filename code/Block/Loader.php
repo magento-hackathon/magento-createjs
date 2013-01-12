@@ -4,36 +4,44 @@
 class DMC_CreateJs_Block_Loader extends Mage_Core_Block_Abstract
 {
 
-
+    public function getCreateJsHtml() {
+        return $this->_toHtml();
+    }
 
     protected function _toHtml()
     {
         $html = '';
-        if( Mage::getSingleton('dmc_createjs/session')->getIsActive() ){
+
+        $js_arr = array();
+
+        foreach( $this->getFrontendJs() as $js ){
 
 
-            foreach( $this->getFrontendJs() as $js ){
+            $jsPath = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS) . 'createjs/' . $js;
+            $js_arr[] = $jsPath;
 
-                $jsPath = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS) . 'createjs/' . $js;
-                $html .= "<script type='text/javascript' src='$jsPath'></script>";
 
-            }
-            foreach( $this->getFrontendCss() as $css ){
 
-                $cssPath = $this->getSkinUrl('dmc_createjs/' . $css );
-                $html .= "<link type='text/css' href='$cssPath' media='all' rel='stylesheet'/>";
-
-            }
-
-            $html .= '<script type="text/javascript">
-            var adminUrl = "'.Mage::getConfig()->getNode('admin/routers/adminhtml/args/frontName').'";
-            var shopUrl = "'.$this->getUrl().'";
-
-            </script>';
-            $jsPath = $this->getSkinUrl('dmc_createjs/' . 'config.js' );
-            $html  .= "<script type='text/javascript' src='$jsPath'></script>";
         }
-        return "<meta content='is used' name='createjs'/>".$html;
+        foreach( $this->getFrontendCss() as $css ){
+
+            $cssPath = 'skin/frontend/default/default/dmc_createjs/' . $css;
+            $html .= "<link type='text/css' href='$cssPath' media='all' rel='stylesheet'/>";
+
+        }
+
+        $html .= '<script type="text/javascript">
+        var adminUrl = "'.Mage::getConfig()->getNode('admin/routers/adminhtml/args/frontName').'";
+        var shopUrl = "'.$this->getUrl().'"
+
+        </script>';
+        $jsPath = 'skin/frontend/default/default/dmc_createjs/' . 'config.js';
+        $html  .= "<script type='text/javascript' src='$jsPath'></script>";
+
+        $data = array('html' => $html,
+              'js' => $js_arr);
+
+        return $data;
     }
 
     public function getFrontendJs(){

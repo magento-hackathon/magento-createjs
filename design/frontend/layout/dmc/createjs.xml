@@ -3,8 +3,7 @@
 
 	<default>
 		<reference name="head">
-			<block type="dmc_createjs/loader" name="dmc_createjs_loader" >
-			</block>
+			<action method="addItem"><type>js</type><name>createjs/createjstest.js</name></action>
 		</reference>
 	</default>
 </layout>
