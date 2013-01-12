@@ -1,6 +1,8 @@
 new Ajax.Request('/admin/createjs/getcreatejs', {
     method: 'get',
     onSuccess: function(response) {
+
+        
         var create_js_div = new Element('span', {'id' : 'createjs_libs'});
 
         var res = response.responseText.evalJSON();
@@ -9,7 +11,12 @@ new Ajax.Request('/admin/createjs/getcreatejs', {
 
         for(item in res.js) {
             if (res.js.hasOwnProperty(item)) {
-                alert('<script type="text/javascript" src="'+res.js[item]+'"></script>');
+                var element = document.createElement('script');
+                element.type = 'text/javascript';
+                element.src = res.js[item];
+
+                document.getElementsByClassName('footer-container')[0].appendChild(element);
+                //alert('<script type="text/javascript" src="'+res.js[item]+'"></script>');
             }
         }
         /**
