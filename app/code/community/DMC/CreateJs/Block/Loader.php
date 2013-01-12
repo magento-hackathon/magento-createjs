@@ -58,6 +58,7 @@ class DMC_CreateJs_Block_Loader extends Mage_Core_Block_Abstract
         return array(
             'create-ui/css/create-ui.css',
             'midgard-notifications/midgardnotif.css',
+            'custom.css',
         );
     }
 
