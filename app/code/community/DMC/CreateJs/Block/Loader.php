@@ -27,6 +27,7 @@ class DMC_CreateJs_Block_Loader extends Mage_Core_Block_Abstract
             $html .= '<script type="text/javascript">
             var adminUrl = "'.Mage::getConfig()->getNode('admin/routers/adminhtml/args/frontName').'";
             var shopUrl = "'.$this->getUrl().'";
+            var ressourceUrl = "'.$this->getRessourceUrl().'";
 
             </script>';
             $jsPath = $this->getSkinUrl('dmc_createjs/' . 'config.js' );
@@ -58,6 +59,15 @@ class DMC_CreateJs_Block_Loader extends Mage_Core_Block_Abstract
             'create-ui/css/create-ui.css',
             'midgard-notifications/midgardnotif.css',
         );
+    }
+
+    public function getUrlWithoutGet(){
+        $current_url = explode('?', $this->getUrl() );
+        return $current_url[0];
+    }
+
+    public function getRessourceUrl(){
+        return $this->getRequest()->getPathInfo();
     }
 
 }

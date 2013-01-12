@@ -6,6 +6,11 @@ jQuery(document).ready(function () {
 	$cms.attr('about', '/' + location.href.replace(/\?.+/,'').replace(shopUrl,''));
 	jQuery('body.cms-page-view .main > .col-main > .std').attr('property','content');
 
+    var $product = jQuery('body.catalog-product-view .main > .col-main');
+    $product.attr('about', '/' + ressourceUrl );
+    $product.find('.product-name > h1').attr('property','product-name');
+    $product.find('.short-description > .std').attr('property','short-description');
+    $product.find('.box-description > .std').attr('property','description');
 
 	jQuery('body').midgardCreate({
 		url: function () {
