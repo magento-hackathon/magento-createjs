@@ -10,6 +10,7 @@ new Ajax.Request('/admin/createjs/getcreatejs', {
                 element.type = 'text/javascript';
                 element.src = magentoCreatejs.js[item];
                 document.getElementsByTagName('head')[0].appendChild(element);
+                window.setTimeout(50);
             }
         }
 
