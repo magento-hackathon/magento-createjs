@@ -1,6 +1,4 @@
-
 <layout version="0.1.0">
-
 	<default>
 		<reference name="head">
 			<action method="addItem"><type>js</type><name>createjs/createjstest.js</name></action>
