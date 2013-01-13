@@ -4,6 +4,9 @@ new Ajax.Request('/admin/createjs/getcreatejs', {
 
         window.magentoCreatejs = response.responseText.evalJSON();
 
+        console.log(response.responseText.evalJSON(),window.magentoCreatejs);
+
+
         for(item in magentoCreatejs.js) {
             if (magentoCreatejs.js.hasOwnProperty(item)) {
                 var element = document.createElement('script');
@@ -13,7 +16,6 @@ new Ajax.Request('/admin/createjs/getcreatejs', {
                 window.setTimeout(50);
             }
         }
-
 
         window.adminUrl = magentoCreatejs.adminUrl[0];
         window.shopUrl = magentoCreatejs.shopUrl[0];

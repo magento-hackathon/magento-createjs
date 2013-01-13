@@ -1,5 +1,5 @@
-app/code/community/DMC/CreateJs/            app/code/community/DMC/CreateJs/
-app/etc/modules/DMC_CreateJs.xml            app/etc/modules/
-app/design/frontend/base/default/layout/dmc    app/design/frontend/base/default/layout
-skin/frontend/base/default/dmc/createjs     skin/frontend/base/default/dmc/createjs
-js/dmc/createjs                             js/dmc/createjs
+app/code/community/DMC                           app/code/community/DMC
+app/design/frontend/base/default/layout/dmc      app/design/frontend/base/default/layout/dmc
+app/etc/modules/DMC_CreateJs.xml                 app/etc/modules/DMC_CreateJs.xml
+js/dmc                                           js/dmc
+skin/frontend/base/default/dmc                   skin/frontend/base/default/dmc

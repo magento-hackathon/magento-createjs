@@ -20,8 +20,14 @@ class DMC_CreateJs_Adminhtml_CreatejsController extends Mage_Adminhtml_Controlle
 
     public function savecreatejsAction(){
 
-        Mage::getModel('catalog/product')->load(4985)->setName('Peter')->save();
+        $params = $this->getRequest()->getParams();
+        $product = Mage::getModel('catalog/product')->load($params['ID']);
+        $product->setName($params['name']);
+        $product->setDescription($params['description']);
+        $product->setShortDescription($params['short-description']);
 
+        $product->save();
+        
     }
 
     public function preDispatch()
@@ -49,6 +55,7 @@ class DMC_CreateJs_Adminhtml_CreatejsController extends Mage_Adminhtml_Controlle
             && $this->getRequest()->getActionname() == 'savecreatejs'
             && $isAdmin
         ) {
+
 
         } else {
             $this->getResponse()->setHttpResponseCode(403);

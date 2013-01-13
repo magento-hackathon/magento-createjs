@@ -12,7 +12,6 @@ jQuery(document).ready(function () {
     $product.find('.short-description > .std').attr('property','short-description');
     $product.find('.box-description > .std').attr('property','description');
 
-window.magentoCreatejs = {};
 	jQuery('body').midgardCreate({
 		url: function () {
 			return '/admin/createJs/savecreatejs';
@@ -38,7 +37,7 @@ Backbone.sync = function(method, model, options) {
         postData["short-description"] = model.get('short-description')
     }
 
-    new Ajax.Request('/admin/createJs/savecreatejs', {
+    new Ajax.Request(magentoCreatejs.aurl, {
         method: 'post',
         parameters: postData,
         onSuccess: function() {
