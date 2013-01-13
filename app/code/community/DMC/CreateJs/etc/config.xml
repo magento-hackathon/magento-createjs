@@ -37,4 +37,16 @@
 			</dmc_createjs>
 		</models>
 	</global>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <DMC_CreateJs before="Mage_Adminhtml">DMC_CreateJs_Adminhtml</DMC_CreateJs>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
 </config>

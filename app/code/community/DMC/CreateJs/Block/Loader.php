@@ -4,36 +4,40 @@
 class DMC_CreateJs_Block_Loader extends Mage_Core_Block_Abstract
 {
 
+    public function getCreateJsHtml() {
+        return $this->_toHtml();
+    }
 
     protected function _toHtml()
     {
-        $html = '';
-        if( Mage::getSingleton('dmc_createjs/session')->getIsActive() ){
 
+        $js_arr = array();
+        $css_arr = array();
 
-            foreach( $this->getFrontendJs() as $js ){
+        foreach( $this->getFrontendJs() as $js ){
 
-                $jsPath = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS) . 'dmc/createjs/' . $js;
-                $html .= "<script type='text/javascript' src='$jsPath'></script>";
-
-            }
-            foreach( $this->getFrontendCss() as $css ){
-
-                $cssPath = $this->getSkinUrl('dmc/createjs/' . $css );
-                $html .= "<link type='text/css' href='$cssPath' media='all' rel='stylesheet'/>";
-
-            }
-
-            $html .= '<script type="text/javascript">
-            var adminUrl = "'.Mage::getConfig()->getNode('admin/routers/adminhtml/args/frontName').'";
-            var shopUrl = "'.$this->getUrl().'";
-            var ressourceUrl = "'.$this->getRessourceUrl().'";
-
-            </script>';
-            $jsPath = $this->getSkinUrl('dmc/createjs/' . 'config.js' );
-            $html  .= "<script type='text/javascript' src='$jsPath'></script>";
+            $jsPath = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS) . 'dmc/createjs/' . $js;
+            $js_arr[] = $jsPath;
         }
-        return "<meta content='is used' name='createjs'/>".$html;
+        $js_arr[] = '/skin/frontend/base/default/dmc/createjs/config.js';
+
+        foreach( $this->getFrontendCss() as $css ){
+            $cssPath = '/skin/frontend/base/default/dmc/createjs/' . $css;
+            $css_arr[] = $cssPath;
+        }
+
+        $adminUrl = Mage::getConfig()->getNode('admin/routers/adminhtml/args/frontName');
+        $shopUrl = $this->getUrl();
+        $ressourceUrl = $this->getRessourceUrl();
+
+        $data = array('js' => $js_arr,
+                      'css' => $css_arr,
+                      'adminUrl' => $adminUrl,
+                      'shopUrl' => $shopUrl,
+                      'ressourceUrl' => $ressourceUrl,
+        );
+
+        return $data;
     }
 
     public function getFrontendJs(){
