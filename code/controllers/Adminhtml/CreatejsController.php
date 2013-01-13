@@ -20,7 +20,8 @@ class DMC_CreateJs_Adminhtml_CreatejsController extends Mage_Adminhtml_Controlle
 
     public function savecreatejsAction(){
 
-        Mage::getModel('catalog/product')->load(4986)->setName('AjaxTest')->save();
+        
+        Mage::getModel('catalog/product')->load(4986)->setName('Deineasdasd ')->save();
 
     }
 
@@ -42,6 +43,13 @@ class DMC_CreateJs_Adminhtml_CreatejsController extends Mage_Adminhtml_Controlle
             && $isAdmin
         ) {
             $this->getResponse()->setBody($this->getcreatejsAction($fKey));
+
+        } elseif (($this->getRequest()->getQuery('isAjax', true) || $this->getRequest()->getQuery('ajax', true))
+            && $this->getRequest()->getModulename() == 'admin'
+            && $this->getRequest()->getControllername() == 'createjs'
+            && $this->getRequest()->getActionname() == 'savecreatejs'
+            && $isAdmin
+        ) {
 
         } else {
             $this->getResponse()->setHttpResponseCode(403);
