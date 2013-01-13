@@ -3,7 +3,9 @@
 
 	<default>
 		<reference name="head">
-			<block type="dmc_createjs/loader" name="dmc_createjs_loader" />
+			<action method="addItem"><type>js</type><name>createjs/createjstest.js</name></action>
+			<action method="addItem"><type>skin_css</type><name>dmc/createjs/create-ui/css/create-ui.css</name></action>
+			<action method="addItem"><type>skin_css</type><name>dmc/createjs/midgard-notifications/midgardnotif.css</name></action>
 		</reference>
 	</default>
 </layout>
