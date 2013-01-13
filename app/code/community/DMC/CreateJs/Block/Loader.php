@@ -19,9 +19,10 @@ class DMC_CreateJs_Block_Loader extends Mage_Core_Block_Abstract
             $jsPath = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS) . 'dmc/createjs/' . $js;
             $js_arr[] = $jsPath;
         }
+        $js_arr[] = '/skin/frontend/base/default/dmc/createjs/config.js';
 
         foreach( $this->getFrontendCss() as $css ){
-            $cssPath = '/skin/frontend/default/default/dmc/createjs/' . $css;
+            $cssPath = '/skin/frontend/base/default/dmc/createjs/' . $css;
             $css_arr[] = $cssPath;
         }
 
@@ -53,7 +54,6 @@ class DMC_CreateJs_Block_Loader extends Mage_Core_Block_Abstract
             'annotate-min.js',
             'hallo.js',
             'create.js',
-            'config.js'
         );
 
     }

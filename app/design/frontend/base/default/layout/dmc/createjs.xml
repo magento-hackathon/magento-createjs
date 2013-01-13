@@ -5,7 +5,9 @@
 		<reference name="head">
 			<action method="addItem"><type>js</type><name>createjs/createjstest.js</name></action>
 			<action method="addItem"><type>skin_css</type><name>dmc/createjs/create-ui/css/create-ui.css</name></action>
-			<action method="addItem"><type>skin_css</type><name>dmc/createjs/midgard-notifications/midgardnotif.css</name></action>
+            <action method="addItem"><type>skin_css</type><name>dmc/createjs/midgard-notifications/midgardnotif.css</name></action>
+            <action method="addItem"><type>skin_css</type><name>dmc/createjs/font-awesome/css/font-awesome.css</name></action>
+            <!--<action method="addItem"><type>skin_css</type><name>dmc/createjs/custom.css</name></action>-->
 		</reference>
 	</default>
 </layout>

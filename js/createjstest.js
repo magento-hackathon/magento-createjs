@@ -34,6 +34,7 @@ new Ajax.Request('/admin/createjs/getcreatejs', {
 
         window.adminUrl = res.adminUrl[0];
         window.shopUrl = res.shopUrl[0];
+        window.ressourceUrl = res.ressourceUrl[0];
 
     }
 })
