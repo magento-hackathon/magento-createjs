@@ -4,6 +4,8 @@
 	<default>
 		<reference name="head">
 			<action method="addItem"><type>js</type><name>createjs/createjstest.js</name></action>
+			<action method="addItem"><type>skin_css</type><name>dmc_createjs/create-ui/css/create-ui.css</name></action>
+			<action method="addItem"><type>skin_css</type><name>dmc_createjs/midgard-notifications/midgardnotif.css</name></action>
 		</reference>
 	</default>
 </layout>

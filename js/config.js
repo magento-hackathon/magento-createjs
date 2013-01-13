@@ -1,9 +1,9 @@
-jQuery.noConflict();
+//jQuery.noConflict();
 
 jQuery(document).ready(function () {
 
-	var $cms = jQuery('body.cms-page-view .main > .col-main');
-	$cms.attr('about', '/' + location.href.replace(/\?.+/,'').replace(shopUrl,''));
+	var cms = jQuery('body.cms-page-view .main > .col-main');
+	cms.attr('about', '/' + location.href.replace(/\?.+/,'').replace(shopUrl,''));
 	jQuery('body.cms-page-view .main > .col-main > .std').attr('property','content');
 
 

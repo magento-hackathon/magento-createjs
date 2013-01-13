@@ -20,6 +20,7 @@ new Ajax.Request('/admin/createjs/getcreatejs', {
 
         //$html .= "<link type='text/css' href='$cssPath' media='all' rel='stylesheet'/>";
 
+        /**
         for(item in res.css) {
             if (res.css.hasOwnProperty(item)) {
                 var element = document.createElement('link');
@@ -28,12 +29,11 @@ new Ajax.Request('/admin/createjs/getcreatejs', {
                 element.media = 'all';
                 element.ref = 'stylesheet';
                 document.getElementsByTagName('head')[0].appendChild(element);
-                console.log(res.css[item]);
             }
-        }
+        }**/
 
-        window.adminUrl = res.adminUrl;
-        window.shopUrl = res.shopUrl;
+        window.adminUrl = res.adminUrl[0];
+        window.shopUrl = res.shopUrl[0];
 
     }
 })

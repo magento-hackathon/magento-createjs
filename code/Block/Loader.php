@@ -61,4 +61,3 @@ class DMC_CreateJs_Block_Loader extends Mage_Core_Block_Abstract
     }
 
 }
-
