@@ -22,7 +22,7 @@ new Ajax.Request('/admin/createjs/getcreatejs', {
 
             new Ajax.Request(res.aurl, {
                 method: 'post',
-                parameters: {form_key: res.fkey},
+                parameters: {form_key: res.fKey},
                 onSuccess: function() {
                     alert("Save done!");
                 }
