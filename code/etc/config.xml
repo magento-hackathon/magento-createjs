@@ -37,7 +37,6 @@
 			</dmc_createjs>
 		</models>
 	</global>
-
     <admin>
         <routers>
             <adminhtml>

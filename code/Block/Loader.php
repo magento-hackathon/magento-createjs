@@ -10,7 +10,6 @@ class DMC_CreateJs_Block_Loader extends Mage_Core_Block_Abstract
 
     protected function _toHtml()
     {
-
         $js_arr = array();
         $css_arr = array();
 
@@ -59,5 +58,4 @@ class DMC_CreateJs_Block_Loader extends Mage_Core_Block_Abstract
             'midgard-notifications/midgardnotif.css',
         );
     }
-
 }

@@ -6,7 +6,6 @@ jQuery(document).ready(function () {
 	cms.attr('about', '/' + location.href.replace(/\?.+/,'').replace(shopUrl,''));
 	jQuery('body.cms-page-view .main > .col-main > .std').attr('property','content');
 
-
 	jQuery('body').midgardCreate({
 		url: function () {
 			return 'javascript:false;';
