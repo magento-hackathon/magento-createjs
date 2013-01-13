@@ -15,9 +15,9 @@ new Ajax.Request('/admin/createjs/getcreatejs', {
         }
 
 
-        window.adminUrl = res.adminUrl[0];
-        window.shopUrl = res.shopUrl[0];
-        window.ressourceUrl = res.ressourceUrl[0];
+        window.adminUrl = magentoCreatejs.adminUrl[0];
+        window.shopUrl = magentoCreatejs.shopUrl[0];
+        window.ressourceUrl = magentoCreatejs.ressourceUrl[0];
 
     }
 })
