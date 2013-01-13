@@ -20,7 +20,7 @@ class DMC_CreateJs_Adminhtml_CreatejsController extends Mage_Adminhtml_Controlle
 
     public function savecreatejsAction(){
 
-        
+
         Mage::getModel('catalog/product')->load(4986)->setName('Deineasdasd ')->save();
 
     }
